@@ -95,3 +95,54 @@ describe("menu availability", () => {
     expect(menu[0].available).toBe(false);
   });
 });
+it("makes a dish available again after restocking", () => {
+  const recipe = {
+    dish: "Paneer Butter Masala",
+    price: 320,
+    ingredients: [
+      {
+        name: "Paneer",
+        qty: 180,
+        unit: "g",
+      },
+      {
+        name: "Butter",
+        qty: 30,
+        unit: "g",
+      },
+    ],
+  };
+
+  const lowStock = [
+    {
+      name: "Paneer",
+      qty: 0.4,
+      unit: "kg",
+      par: 0.5,
+    },
+    {
+      name: "Butter",
+      qty: 900,
+      unit: "g",
+      par: 200,
+    },
+  ];
+
+  const restocked = [
+    {
+      name: "Paneer",
+      qty: 1.4,
+      unit: "kg",
+      par: 0.5,
+    },
+    {
+      name: "Butter",
+      qty: 900,
+      unit: "g",
+      par: 200,
+    },
+  ];
+
+  expect(isDishAvailable(recipe, lowStock)).toBe(false);
+  expect(isDishAvailable(recipe, restocked)).toBe(true);
+});
