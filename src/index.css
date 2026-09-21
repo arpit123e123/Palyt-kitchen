@@ -1,0 +1,426 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, Arial, sans-serif;
+  color: #1f2937;
+  background: #f4f6f8;
+}
+
+body {
+  margin: 0;
+  min-width: 1100px;
+  background: #f4f6f8;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* PAGE */
+
+.app {
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 34px 38px 50px;
+}
+
+header {
+  margin-bottom: 26px;
+}
+
+header h1 {
+  margin: 0;
+  color: #111827;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header p {
+  margin: 7px 0 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* MESSAGE */
+
+.message {
+  margin-bottom: 20px;
+  padding: 11px 14px;
+  border: 1px solid #d9dee6;
+  border-radius: 8px;
+  background: #fff;
+  color: #374151;
+  font-size: 14px;
+}
+
+/* MAIN LAYOUT */
+
+.columns,
+.layout {
+  display: grid !important;
+  grid-template-columns:
+    minmax(0, 1.25fr)
+    minmax(390px, 0.75fr) !important;
+  gap: 22px !important;
+  align-items: start !important;
+}
+
+/* PANELS */
+
+.section,
+.panel {
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e1e5eb;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.section-title,
+.panel-header {
+  min-height: 76px;
+  padding: 20px 22px;
+  border-bottom: 1px solid #edf0f3;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.section-title h2,
+.panel-header h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 18px;
+  font-weight: 650;
+}
+
+.section-title p,
+.panel-header p {
+  margin: 5px 0 0;
+  color: #8a919d;
+  font-size: 12px;
+}
+
+.small-text {
+  max-width: 460px;
+  margin: 5px 0 0;
+  color: #8a919d;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* PRIMARY BUTTON */
+
+.section-title button,
+.panel-header button,
+.menu-footer button {
+  padding: 9px 14px;
+  border: 0;
+  border-radius: 7px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.section-title button:hover,
+.panel-header button:hover,
+.menu-footer button:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.menu-footer button:disabled {
+  background: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* SEARCH */
+
+.search {
+  width: calc(100% - 44px);
+  height: 40px;
+  margin: 18px 22px 12px;
+  padding: 0 12px;
+
+  border: 1px solid #d9dee6;
+  border-radius: 7px;
+  outline: none;
+
+  background: #fff;
+  color: #1f2937;
+  font-size: 13px;
+}
+
+.search::placeholder {
+  color: #9ca3af;
+}
+
+.search:focus {
+  border-color: #93b4f4;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+/* STOCK */
+
+.stock-list {
+  padding: 0 22px 10px;
+}
+
+.stock-row {
+  display: grid;
+
+  grid-template-columns:
+    minmax(150px, 1.5fr)
+    85px
+    85px
+    95px
+    125px;
+
+  align-items: center;
+  min-height: 65px;
+  gap: 10px;
+
+  border-bottom: 1px solid #eef0f3;
+}
+
+.stock-row:last-child {
+  border-bottom: 0;
+}
+
+.stock-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stock-info strong {
+  color: #252b35;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.stock-info span,
+.par {
+  color: #737b87;
+  font-size: 13px;
+}
+
+/* STATUS */
+
+.status {
+  width: fit-content;
+  padding: 4px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.status.ok,
+.status.available {
+  background: #eaf7ef;
+  color: #23814a;
+}
+
+.status.danger,
+.status.unavailable {
+  background: #fcecec;
+  color: #c03939;
+}
+
+/* STOCK ACTIONS */
+
+.row-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.secondary,
+.danger-button {
+  padding: 7px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.secondary {
+  border: 1px solid #dfe3e8;
+  background: #fff;
+  color: #4b5563;
+}
+
+.secondary:hover {
+  background: #f7f8fa;
+}
+
+.danger-button {
+  border: 1px solid #f0d7d7;
+  background: #fff;
+  color: #bd4141;
+}
+
+.danger-button:hover {
+  background: #fff5f5;
+}
+
+/* MENU */
+
+.menu-list {
+  padding: 4px 22px 12px;
+}
+
+.menu-card {
+  padding: 17px 2px;
+  border-bottom: 1px solid #eef0f3;
+}
+
+.menu-card:last-child {
+  border-bottom: 0;
+}
+
+.menu-card h3 {
+  margin: 0;
+  color: #252b35;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.price {
+  margin: 5px 0 14px;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.menu-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* FORM */
+
+.form {
+  margin: 0 22px 16px;
+  padding: 17px;
+
+  border: 1px solid #e0e4e9;
+  border-radius: 9px;
+  background: #f9fafb;
+}
+
+.form h3 {
+  margin: 0 0 15px;
+  color: #252b35;
+  font-size: 15px;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 11px;
+  color: #555e6c;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.form input,
+.form select {
+  width: 100%;
+  height: 38px;
+  margin-top: 5px;
+  padding: 0 10px;
+
+  border: 1px solid #d7dce3;
+  border-radius: 6px;
+  outline: none;
+
+  background: #fff;
+  color: #303641;
+  font-size: 13px;
+}
+
+.form input:focus,
+.form select:focus {
+  border-color: #93b4f4;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.07);
+}
+
+.form-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+/* EMPTY */
+
+.empty {
+  margin: 0;
+  padding: 30px 22px;
+  color: #8a919d;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* DESKTOP: ALWAYS SIDE BY SIDE */
+
+@media (min-width: 901px) {
+  .columns,
+  .layout {
+    grid-template-columns:
+      minmax(0, 1.25fr)
+      minmax(390px, 0.75fr) !important;
+  }
+}
+
+/* SMALL SCREEN */
+
+@media (max-width: 900px) {
+  body {
+    min-width: 0;
+  }
+
+  .app {
+    padding: 24px 16px;
+  }
+
+  .columns,
+  .layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .stock-row {
+    grid-template-columns: 1fr 1fr;
+    padding: 14px 0;
+  }
+
+  .row-actions {
+    justify-content: flex-start;
+  }
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.reset-button {
+  background: #ffffff !important;
+  color: #4b5563 !important;
+  border: 1px solid #dfe3e8 !important;
+}
+
+.reset-button:hover {
+  background: #f7f8fa !important;
+}
